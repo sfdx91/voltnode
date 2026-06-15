@@ -7,7 +7,6 @@
 <title>VoltNode - Powering Game Servers</title>
 
 <link rel="icon" type="image/png" href="logo.png">
-  
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -29,6 +28,46 @@ color:white;
 overflow-x:hidden;
 }
 
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 50px;
+background:rgba(5,8,22,.90);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.nav-logo{
+font-size:1.5rem;
+font-weight:700;
+color:#3fb7ff;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#3fb7ff;
+}
+
+/* HERO */
+
 .hero{
 min-height:100vh;
 display:flex;
@@ -42,7 +81,7 @@ radial-gradient(circle at center,#0f2b6d 0%,#081122 40%,#050816 100%);
 }
 
 .logo{
-width:250px;
+width:260px;
 max-width:80%;
 margin-bottom:20px;
 filter:drop-shadow(0 0 20px #00bfff);
@@ -100,6 +139,8 @@ background:#3fb7ff;
 color:black;
 }
 
+/* SECTIONS */
+
 .section{
 max-width:1200px;
 margin:auto;
@@ -108,7 +149,7 @@ padding:90px 20px;
 
 .section-title{
 text-align:center;
-font-size:2.3rem;
+font-size:2.4rem;
 margin-bottom:50px;
 }
 
@@ -168,30 +209,20 @@ margin-bottom:10px;
 }
 
 .server-ip{
-font-size:1.2rem;
+font-size:1.15rem;
 font-weight:600;
 }
 
-<section class="section">
+.about{
+background:#0c1326;
+padding:30px;
+border-radius:15px;
+border:1px solid rgba(63,183,255,.15);
+line-height:1.8;
+}
 
-<h2 class="section-title">Future Projects</h2>
+/* FOOTER */
 
-<div class="cards">
-
-<div class="card">
-<h3>Minecraft Network</h3>
-<p>Currently under development with community partners.</p>
-</div>
-
-<div class="card">
-<h3>US Infrastructure</h3>
-<p>Expansion planned to North America.</p>
-</div>
-
-</div>
-
-</section>
-  
 footer{
 margin-top:50px;
 padding:30px;
@@ -204,10 +235,51 @@ footer p{
 opacity:.7;
 }
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+padding:15px;
+gap:15px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.logo{
+width:200px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
+
+<nav class="navbar">
+
+<div class="nav-logo">
+VoltNode
+</div>
+
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#servers">Servers</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="https://discord.gg/RKDcjkqJSd" target="_blank">Discord</a>
+</div>
+
+</nav>
 
 <section class="hero">
 
@@ -222,7 +294,7 @@ Professional gaming infrastructure, hosting solutions and community development.
 
 <div class="buttons">
 
-<a href="https://discord.gg/RKDcjkqJSd" class="btn btn-primary">
+<a href="https://discord.gg/RKDcjkqJSd" class="btn btn-primary" target="_blank">
 Join Discord
 </a>
 
@@ -264,7 +336,7 @@ View Servers
 
 </section>
 
-<section class="section">
+<section id="services" class="section">
 
 <h2 class="section-title">Services</h2>
 
@@ -299,21 +371,51 @@ View Servers
 <h2 class="section-title">Game Servers</h2>
 
 <div class="server-box">
-
 <h3>Public Server</h3>
-
-<p class="server-ip">
-178.105.21.214:27016
-</p>
-
+<p class="server-ip">178.105.21.214:27016</p>
 </div>
 
 <div class="server-box">
-
 <h3>Competitive Server</h3>
+<p class="server-ip">178.105.21.214:27015</p>
+</div>
 
-<p class="server-ip">
-178.105.21.214:27015
+</section>
+
+<section id="projects" class="section">
+
+<h2 class="section-title">Future Projects</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Minecraft Network</h3>
+<p>Currently under development with community partners.</p>
+</div>
+
+<div class="card">
+<h3>US Infrastructure</h3>
+<p>Expansion planned to North America.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<h2 class="section-title">About VoltNode</h2>
+
+<div class="about">
+
+<p>
+VoltNode is an independent gaming and hosting project focused on building long-term gaming communities and reliable infrastructure.
+</p>
+
+<br>
+
+<p>
+Our mission is to provide stable, high-performance game servers while creating a welcoming environment for players around the world.
 </p>
 
 </div>
@@ -322,13 +424,8 @@ View Servers
 
 <footer>
 
-<p>
-© 2026 VoltNode Gaming & Hosting
-</p>
-
-<p>
-Powering Game Servers.
-</p>
+<p>© 2026 VoltNode Gaming & Hosting</p>
+<p>Powering Game Servers.</p>
 
 </footer>
 
