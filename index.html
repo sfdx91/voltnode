@@ -284,6 +284,17 @@ color:#3fb7ff;
 font-weight:600;
 }
 
+.fade-in{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.fade-in.show{
+opacity:1;
+transform:translateY(0);
+}
+
 footer{
 margin-top:50px;
 padding:30px;
@@ -369,7 +380,7 @@ View Servers
 
 </section>
 
-<section class="section">
+<section class="section fade-in">
 
 <div class="status-box">
 
@@ -411,7 +422,7 @@ View Servers
 
 </section>
 
-<section class="section">
+<section class="section fade-in">
 
 <h2 class="section-title">VoltNode Network</h2>
 
@@ -471,7 +482,7 @@ View Servers
 
 </section>
 
-<section class="section">
+<section class="section fade-in">
 
 <h2 class="section-title">Why VoltNode?</h2>
 
@@ -496,7 +507,7 @@ View Servers
 
 </section>
 
-<section id="servers" class="section">
+<section id="servers" class="section fade-in">
 
 <h2 class="section-title">Game Servers</h2>
 
@@ -554,7 +565,7 @@ Join Server
 
 </section>
 
-<section id="about" class="section">
+<section id="about" class="section fade-in">
 
 <h2 class="section-title">About VoltNode</h2>
 
@@ -574,7 +585,7 @@ Starting with Counter-Strike 1.6 and expanding into Minecraft, VoltNode aims to 
 
 </section>
 
-<section class="section">
+<section class="section fade-in">
 
 <h2 class="section-title">Our Vision</h2>
 
@@ -637,7 +648,7 @@ Hosting Platform
 
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section fade-in">
 
 <h2 class="section-title">Contact</h2>
 
@@ -668,6 +679,22 @@ Hosting Platform
 <p>Powering Game Servers.</p>
 
 </footer>
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
+});
+
+document.querySelectorAll('.fade-in').forEach((el)=>{
+observer.observe(el);
+});
+
+</script>
 
 </body>
 </html>
