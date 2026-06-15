@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VoltNode Gaming & Hosting</title>
+
+<title>VoltNode - Powering Game Servers</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,118 +14,228 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-background:#0a0f1a;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+background:
+radial-gradient(circle at center,#0f2b6d 0%,#081122 40%,#050816 100%);
+}
+
+.logo{
+width:250px;
+max-width:80%;
+margin-bottom:20px;
+filter:drop-shadow(0 0 20px #00bfff);
+}
+
+.hero h1{
+font-size:4rem;
+font-weight:800;
+}
+
+.hero p{
+margin-top:15px;
+font-size:1.2rem;
+max-width:700px;
+opacity:.85;
+}
+
+.highlight{
+color:#3fb7ff;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:10px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:#1e90ff;
 color:white;
 }
 
-header{
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(135deg,#0b1220,#101b33);
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 0 20px #1e90ff;
 }
 
-h1{
-font-size:60px;
-margin-bottom:15px;
+.btn-secondary{
+border:1px solid #3fb7ff;
+color:#3fb7ff;
 }
 
-.subtitle{
-font-size:22px;
-color:#4da6ff;
+.btn-secondary:hover{
+background:#3fb7ff;
+color:black;
 }
 
 .section{
 max-width:1200px;
 margin:auto;
-padding:60px 20px;
+padding:90px 20px;
+}
+
+.section-title{
+text-align:center;
+font-size:2.3rem;
+margin-bottom:50px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.stat{
+background:#0c1326;
+padding:30px;
+border-radius:15px;
+text-align:center;
+border:1px solid rgba(63,183,255,.15);
+}
+
+.stat h3{
+font-size:2rem;
+color:#3fb7ff;
 }
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:30px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
-background:#111827;
-padding:25px;
+background:#0c1326;
+padding:30px;
 border-radius:15px;
-border:1px solid #1f2937;
+border:1px solid rgba(63,183,255,.15);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card h3{
 margin-bottom:15px;
-color:#4da6ff;
+color:#3fb7ff;
 }
 
-.server{
-background:#0f172a;
+.server-box{
+background:#0c1326;
 padding:25px;
 border-radius:15px;
-margin-top:20px;
-border:1px solid #1e293b;
+margin-bottom:20px;
+border:1px solid rgba(63,183,255,.15);
 }
 
-.btn{
-display:inline-block;
-margin-top:15px;
-padding:12px 25px;
-background:#2563eb;
-color:white;
-text-decoration:none;
-border-radius:10px;
+.server-box h3{
+color:#3fb7ff;
+margin-bottom:10px;
+}
+
+.server-ip{
+font-size:1.2rem;
+font-weight:600;
 }
 
 footer{
-text-align:center;
-padding:30px;
-background:#05070d;
 margin-top:50px;
+padding:30px;
+text-align:center;
+background:#03050f;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+footer p{
+opacity:.7;
 }
 
 </style>
-
 </head>
+
 <body>
 
-<header>
+<section class="hero">
 
-<h1>VoltNode</h1>
+<img src="logo.png" class="logo">
 
-<p class="subtitle">
-Gaming & Hosting Solutions
+<h1>Volt<span class="highlight">Node</span></h1>
+
+<p>
+Powering Game Servers.
+Professional gaming infrastructure, hosting solutions and community development.
 </p>
 
-<a class="btn" href="https://discord.gg/RKDcjkqJSd">
+<div class="buttons">
+
+<a href="https://discord.gg/RKDcjkqJSd" class="btn btn-primary">
 Join Discord
 </a>
 
-</header>
+<a href="#servers" class="btn btn-secondary">
+View Servers
+</a>
+
+</div>
+
+</section>
 
 <section class="section">
 
-<h2>Our Services</h2>
+<h2 class="section-title">VoltNode Network</h2>
 
-<div class="cards">
+<div class="stats">
 
-<div class="card">
-<h3>Game Servers</h3>
-<p>Counter-Strike 1.6, Minecraft and future projects.</p>
+<div class="stat">
+<h3>2</h3>
+<p>Active Servers</p>
 </div>
 
-<div class="card">
-<h3>Hosting</h3>
-<p>Professional VPS infrastructure and deployment.</p>
+<div class="stat">
+<h3>24/7</h3>
+<p>Online Infrastructure</p>
 </div>
 
-<div class="card">
-<h3>Community</h3>
-<p>Building long-term gaming communities.</p>
+<div class="stat">
+<h3>EU</h3>
+<p>Hosted Network</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Growth Potential</p>
 </div>
 
 </div>
@@ -131,23 +244,53 @@ Join Discord
 
 <section class="section">
 
-<h2>VoltNode Servers</h2>
+<h2 class="section-title">Services</h2>
 
-<div class="server">
+<div class="cards">
+
+<div class="card">
+<h3>Counter-Strike 1.6</h3>
+<p>Public and Competitive servers with custom systems and progression.</p>
+</div>
+
+<div class="card">
+<h3>Minecraft</h3>
+<p>Future expansion planned with community-driven management.</p>
+</div>
+
+<div class="card">
+<h3>Hosting Solutions</h3>
+<p>Game servers, VPS infrastructure and deployment services.</p>
+</div>
+
+<div class="card">
+<h3>Community Building</h3>
+<p>Focused on long-term gaming communities and player retention.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="servers" class="section">
+
+<h2 class="section-title">Game Servers</h2>
+
+<div class="server-box">
 
 <h3>Public Server</h3>
 
-<p>
+<p class="server-ip">
 178.105.21.214:27016
 </p>
 
 </div>
 
-<div class="server">
+<div class="server-box">
 
 <h3>Competitive Server</h3>
 
-<p>
+<p class="server-ip">
 178.105.21.214:27015
 </p>
 
@@ -158,7 +301,11 @@ Join Discord
 <footer>
 
 <p>
-© 2026 VoltNode Gaming
+© 2026 VoltNode Gaming & Hosting
+</p>
+
+<p>
+Powering Game Servers.
 </p>
 
 </footer>
