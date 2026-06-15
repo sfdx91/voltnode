@@ -304,11 +304,33 @@ margin:auto;
 }
 
 .live-card{
-background:#0c1326;
+background:linear-gradient(
+180deg,
+rgba(12,19,38,.95),
+rgba(7,12,24,.95)
+);
 border:1px solid rgba(63,183,255,.15);
 border-radius:18px;
 padding:30px;
 transition:.3s;
+position:relative;
+overflow:hidden;
+}
+
+.live-card::before{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:2px;
+background:linear-gradient(
+90deg,
+transparent,
+#3fb7ff,
+transparent
+);
+opacity:.8;
 }
 
 .live-card:hover{
