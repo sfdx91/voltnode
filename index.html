@@ -706,17 +706,17 @@ opacity:.8;
 
 <div class="live-stat">
 <h4>Players</h4>
-<p>12 / 20</p>
+<p id="public-players">Loading...</p>
 </div>
 
 <div class="live-stat">
 <h4>Map</h4>
-<p>de_dust2</p>
+<p id="public-map">Loading...</p>
 </div>
 
 <div class="live-stat">
 <h4>Rank</h4>
-<p>#247</p>
+<p id="public-rank">Loading...</p>
 </div>
 
 <div class="live-stat">
@@ -746,17 +746,17 @@ Join Now
 
 <div class="live-stat">
 <h4>Players</h4>
-<p>3 / 12</p>
+<p id="competitive-players">Loading...</p>
 </div>
 
 <div class="live-stat">
 <h4>Map</h4>
-<p>de_train</p>
+<p id="competitive-map">Loading...</p>
 </div>
 
 <div class="live-stat">
 <h4>Rank</h4>
-<p>#995</p>
+<p id="competitive-rank">Loading...</p>
 </div>
 
 <div class="live-stat">
@@ -915,6 +915,82 @@ Join Discord
 <p>Powering Game Servers.</p>
 
 </footer>
+
+
+<!-- SCRIPT DE GAMEMONITORING -->
+
+<script>
+
+async function loadServers(){
+
+try{
+
+const publicResponse =
+await fetch(
+'https://api.gamemonitoring.net/servers/11602890'
+);
+
+const publicData =
+await publicResponse.json();
+
+document.getElementById(
+'public-players'
+).innerText =
+`${publicData.response.numplayers}/${publicData.response.maxplayers}`;
+
+document.getElementById(
+'public-map'
+).innerText =
+publicData.response.map;
+
+document.getElementById(
+'public-rank'
+).innerText =
+'#' + publicData.response.position_game;
+
+
+const competitiveResponse =
+await fetch(
+'https://api.gamemonitoring.net/servers/11602892'
+);
+
+const competitiveData =
+await competitiveResponse.json();
+
+document.getElementById(
+'competitive-players'
+).innerText =
+`${competitiveData.response.numplayers}/${competitiveData.response.maxplayers}`;
+
+document.getElementById(
+'competitive-map'
+).innerText =
+competitiveData.response.map;
+
+document.getElementById(
+'competitive-rank'
+).innerText =
+'#' + competitiveData.response.position_game;
+
+}catch(error){
+
+console.log(error);
+
+}
+
+}
+
+loadServers();
+
+setInterval(
+loadServers,
+30000
+);
+
+</script>
+
+
+<!-- SCRIPT DE ANIMACIONES -->
 
 <script>
 
